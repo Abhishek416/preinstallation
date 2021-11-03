@@ -5,4 +5,3 @@ chmod +w /etc/sudoers
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 chmod -w /etc/sudoers
 exit
-

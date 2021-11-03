@@ -1,18 +1,20 @@
-ln -sf /usr/share/Aisa/Kolkata /etc/locatime
+ln -sf /usr/share/zoneinfo/Aisa/Kolkata /etc/localtime
 hwclock --systohc
 
-echo "en_IN UTF-8" >> /etc/locale.genA
+echo "en_IN UTF-8" >> /etc/locale.gen
 locale-gen
 
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+echo "LANG=en_IN UTF-8" >> /etc/locale.conf
+
 echo "archUser" >> /etc/hostname
 hostnamectl set-hostname archUser
 
 echo "127.0.0.1		localhost" >> /etc/hosts
-echo "::1		localhost" >> /etc/hosts
+echo "::1		      localhost" >> /etc/hosts
 echo "127.0.1.1		archUser" >> /etc/hosts
 
 echo -e "toor\ntoor" | passwd 
+
 cd /boot/
 bootctl install
 
