@@ -4,7 +4,7 @@ hwclock --systohc
 echo "en_IN UTF-8" >> /etc/locale.gen
 locale-gen
 
-echo "LANG=en_IN UTF-8" >> /etc/locale.conf
+echo "LANG='en_IN UTF-8'" >> /etc/locale.conf
 
 echo "archUser" >> /etc/hostname
 hostnamectl set-hostname archUser
