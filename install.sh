@@ -1,10 +1,10 @@
-ln -sf /usr/share/zoneinfo/Aisa/Kolkata /etc/localtime
+ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 hwclock --systohc
 
-echo "en_IN UTF-8" >> /etc/locale.gen
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 
-echo "LANG=en_IN.UTF-8" > /etc/locale.conf
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 echo "archlinux" >> /etc/hostname
 hostnamectl set-hostname archlinux
@@ -34,7 +34,7 @@ systemctl enable iwd dhcpcd
 
 cd
 
-useradd -G wheel -s /bin/zsh abhishek
+useradd -G wheel -s /bin/zsh -m abhishek 
 echo -e "abhishek\nabhishek" | passwd abhishek
 
 chmod +w /etc/sudoers
@@ -42,7 +42,7 @@ echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 chmod -w /etc/sudoers
 
 mkdir -p mnt/{phone,sda,usb}
-mkdir -p /mnt/sda{Backup,Matter,Movies,sda4} 
+mkdir -p /mnt/sda/{Backup,Matter,Movies,sda4} 
 sudo echo "# /dev/sda3" >> /etc/fstab
 echo "/dev/sda3   /mnt/sda/Backup   ext4  rw,relatime  0 2"
 
