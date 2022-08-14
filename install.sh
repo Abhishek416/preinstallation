@@ -41,7 +41,7 @@ chmod +w /etc/sudoers
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 chmod -w /etc/sudoers
 
-mkdir -p mnt/{phone,sda,usb}
+mkdir -p /mnt/{phone,sda,usb}
 mkdir -p /mnt/sda/{Backup,Matter,Movies,sda4} 
 sudo echo "# /dev/sda3" >> /etc/fstab
 echo "/dev/sda3   /mnt/sda/Backup   ext4  rw,relatime  0 2"
